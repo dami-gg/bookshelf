@@ -5,8 +5,8 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/bookshelf-dev'
+    uri: 'mongodb://dami:blimea@ds041992.mongolab.com:41992/bookshelf'
   },
 
-  seedDB: true
+  seedDB: false
 };

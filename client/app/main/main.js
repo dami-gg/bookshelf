@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('bookshelfApp')
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider) {
+    $stateProvider
+      .state('/', {
+        url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });
