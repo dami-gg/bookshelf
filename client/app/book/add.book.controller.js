@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('bookshelfApp')
-  .controller('AddBookCtrl', ['$scope', 'shelfService', function($scope, shelfService){
+  .controller('AddBookCtrl', ['$scope', 'booksService', function($scope, booksService){
     $scope.book = {};
 
     $scope.save = function() {
-      shelfService.addBook($scope.book);
+      booksService.saveBook($scope.book);
     };
   }]);

@@ -6,9 +6,10 @@
       <h1>Library</h1>
 
       <div>
-        <ul>
-          <li ng-repeat="book in library">{{book.name}} - {{book.author}}</li>
-        </ul>
+        <div ng-repeat="book in library">
+          <img ng-src="{{book.coverImageUrl}}"/>
+          <span>{{book.name}} - {{book.author}}</span>
+        </div>
       </div>
     </div>
 

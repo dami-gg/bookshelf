@@ -5,8 +5,10 @@ angular.module('bookshelfApp')
 
     this.addBook = function(book) {
       $http.post('/api/books', {
-        name: book.name,
+        isbn: book.isbn,
+        title: book.title,
         author: book.author,
+        coverImageUrl: book.coverImageUrl,
         category: book.category,
         read: true
       });

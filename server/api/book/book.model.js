@@ -4,8 +4,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var BookSchema = new Schema({
-  name: String,
+  isbn: Number,
+  title: String,
   author: String,
+  coverImageUrl: String,
   category: String,
   read: Boolean
 });
