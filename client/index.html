@@ -26,6 +26,8 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <div ng-include="'components/navbar/navbar.html'"></div>
+
     <!-- Add your site or application content here -->
     <div ui-view=""></div>
 
@@ -68,6 +70,7 @@
           <script src="app/admin/admin.js"></script>
           <script src="app/book/add.book.controller.js"></script>
           <script src="app/book/book.js"></script>
+          <script src="app/book/book.view.controller.js"></script>
           <script src="app/book/modify.book.controller.js"></script>
           <script src="app/library/library.controller.js"></script>
           <script src="app/library/library.js"></script>
@@ -77,6 +80,7 @@
           <script src="app/shared/books/books.service.js"></script>
           <script src="app/shared/googlebooks/googlebooks.service.js"></script>
           <script src="app/shared/shelf/shelf.service.js"></script>
+          <script src="app/shared/utils/partition.service.js"></script>
           <script src="components/auth/auth.service.js"></script>
           <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>

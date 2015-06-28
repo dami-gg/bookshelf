@@ -6,8 +6,8 @@ angular.module('bookshelfApp')
 
       this.saveBook = function(book) {
         googleBooksService.getCoverUrl(book.isbn)
-          .then(function(data) {
-              var info = data.data;
+          .then(function(response) {
+              var info = response.data;
               if (info !== undefined && info.totalItems > 0) {
                 book.coverImageUrl = info.items[0].volumeInfo.imageLinks.thumbnail;
               }
@@ -18,11 +18,11 @@ angular.module('bookshelfApp')
           ).finally(function(){
             return shelfService.addBook(book);
           })
-          .then(function(data) {
+            .then(function(response) {
 
-            }, function(error) {
-                  // TODO Handle error
-            }
-          );
+              }, function(error) {
+                    // TODO Handle error
+              }
+            );
         };
   }]);

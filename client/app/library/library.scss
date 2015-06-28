@@ -1,0 +1,17 @@
+#library {
+
+  float: left; width: 100%; background-color: #e0f1fb;
+
+  .shelves-wrapper { margin-top: 150px; }
+
+  .shelf {
+
+    height: 250px;
+    background-size: 100%; background-image: url(/assets/images/shelf.png); background-repeat: no-repeat;
+
+  }
+
+  .books-row { float: left; width: 100%; padding: 0 17%; margin-top: -130px; }
+
+  .book .cover { max-width: 120px; max-height: 180px; }
+}

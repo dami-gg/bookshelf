@@ -14,7 +14,11 @@ angular.module('bookshelfApp')
       });
     };
 
-    this.getLibrary = function() {
+    this.getCollection = function() {
       return $http.get('/api/books');
     };
+
+    this.getBook = function(isbn) {
+      return $http.get('/api/books/' + isbn);
+    }
   }]);

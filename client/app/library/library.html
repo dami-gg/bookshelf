@@ -1,17 +1,28 @@
-<div>
+<div id="library">
 
   <div class="col-md-12">
-    <div class="well bs-component">
 
       <h1>Library</h1>
 
-      <div>
-        <div ng-repeat="book in library">
-          <img ng-src="{{book.coverImageUrl}}"/>
-          <span>{{book.name}} - {{book.author}}</span>
-        </div>
+      <div ng-show="library.length === 0">
+        <span>Your library is still empty, time to start reading a nice book</span>
       </div>
-    </div>
+
+      <div ng-show="library.length > 0" class="col-md-12 shelves-wrapper">
+
+        <div ng-repeat="shelf in library" class="col-md-12 shelf">
+
+          <div class="books-row">
+
+            <div class="col-md-3 col-xs-6 book" ng-repeat="book in shelf" ng-click="viewBook(book.isbn);">
+              <img class="cover" ng-src="{{book.coverImageUrl}}"/>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
   </div>
 </div>

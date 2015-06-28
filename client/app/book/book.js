@@ -12,5 +12,10 @@ angular.module('bookshelfApp')
         url: '/modify-book',
         templateUrl: 'app/book/modify.html',
         controller: 'ModifyBookCtrl'
+      })
+      .state('view-book', {
+        url: '/view-book/:isbn',
+        templateUrl: 'app/book/view.html',
+        controller: 'ViewBookCtrl'
       });
   });
