@@ -6,12 +6,14 @@ angular.module('bookshelfApp')
       .state('add-book', {
         url: '/add-book',
         templateUrl: 'app/book/add.html',
-        controller: 'AddBookCtrl'
+        controller: 'EditBookCtrl',
+        controllerAs: 'editBook'
       })
       .state('modify-book', {
         url: '/modify-book',
         templateUrl: 'app/book/modify.html',
-        controller: 'ModifyBookCtrl'
+        controller: 'EditBookCtrl',
+        controllerAs: 'editBook'
       })
       .state('view-book', {
         url: '/view-book/:isbn',
