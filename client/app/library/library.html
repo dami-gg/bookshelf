@@ -2,27 +2,47 @@
 
   <div class="col-md-12">
 
-      <h1>Library</h1>
+    <h1>Library</h1>
 
-      <div ng-show="library.length === 0">
-        <span>Your library is still empty, time to start reading a nice book</span>
-      </div>
+    <div class="viewSelector">
+      <button ng-click="showDefaultView = true" ng-class="{enabled: showDefaultView}">List view</button>
+      <button ng-click="showDefaultView = false" ng-class="{enabled: !showDefaultView}">Card view</button>
+    </div>
 
-      <div ng-show="library.length > 0" class="col-md-12 shelves-wrapper">
+    <div ng-show="libCtl.library.length === 0">
+      <span>Your library is still empty, time to start reading a nice book</span>
+    </div>
 
-        <div ng-repeat="shelf in library" class="col-md-12 shelf">
+    <div ng-show="libCtl.library.length > 0" ng-switch="showDefaultView">
+
+      <div ng-switch-when="false" class="col-md-12 shelves-wrapper">
+
+        <div ng-repeat="shelf in libCtl.library" class="col-md-12 shelf">
 
           <div class="books-row">
 
-            <div class="col-md-3 col-xs-6 book" ng-repeat="book in shelf" ng-click="viewBook(book.isbn);">
+            <div class="col-md-3 col-xs-6 book" ng-repeat="book in shelf" ng-click="libCtl.viewBook(book.isbn);">
               <img class="cover" ng-src="{{book.coverImageUrl}}"/>
             </div>
 
           </div>
 
         </div>
+      </div>
+
+      <div ng-switch-default class="col-md-12">
+
+        <div ng-repeat="shelf in libCtl.library" class="col-md-12">
+          <div ng-repeat="book in shelf">
+            <span>{{book.isbn}}</span>
+            <span>{{book.title}}</span>
+            <span>{{book.author}}</span>
+            <span>{{book.category}}</span>
+          </div>
+        </div>
 
       </div>
 
+    </div>
   </div>
 </div>

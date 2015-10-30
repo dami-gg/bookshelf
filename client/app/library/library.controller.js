@@ -1,24 +1,26 @@
 'use strict';
 
 angular.module('bookshelfApp')
-  .controller('LibraryCtrl', ['$scope', '$location', 'shelfService', 'partitionService',
-      function($scope, $location, shelfService, partitionService){
+  .controller('LibraryCtrl', ['$location', 'shelfService', 'partitionService',
+    function ($location, shelfService, partitionService) {
 
-    $scope.library = [];
-    $scope.booksInShelf = 4;
+      var vm = this;
 
-    (function getCollection() {
-      shelfService.getCollection()
-        .success(function(collection){
-          $scope.library = partitionService.chunk(collection, $scope.booksInShelf);
-        })
-        .error(function(data){
-          // TODO Handle error
-          $scope.library = [];
-        });
-    })();
+      vm.library = [];
+      vm.booksInShelf = 4;
 
-    $scope.viewBook = function(isbn) {
-      $location.path('/view-book/' + isbn);
-    }
-  }]);
+      (function getCollection() {
+        shelfService.getCollection()
+          .success(function (collection) {
+            vm.library = partitionService.chunk(collection, vm.booksInShelf);
+          })
+          .error(function (data) {
+            // TODO Handle error
+            vm.library = [];
+          });
+      })();
+
+      vm.viewBook = function (isbn) {
+        $location.path('/view-book/' + isbn);
+      }
+    }]);

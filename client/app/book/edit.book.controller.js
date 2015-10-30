@@ -9,6 +9,4 @@ angular.module('bookshelfApp')
     vm.save = function() {
       booksService.saveBook(vm.book);
     };
-
-    return vm;
   }]);
