@@ -8,25 +8,30 @@
   /**
    * @ngInject
    */
-  function LibraryController($location, shelfService, partitionService) {
+  function LibraryController($location, shelfService, partitionService, Book) {
     var vm = this;
 
     vm.booksInShelf = 4;
-    vm.library = [];
+    vm.content = [];
+    vm.shelves = [];
     vm.viewBook = viewBook;
 
     (function getCollection() {
       shelfService.getCollection()
         .success(function (collection) {
-          vm.library = partitionService.chunk(collection, vm.booksInShelf);
+          collection.forEach(function (book) {
+            vm.content.push(new Book(book.isbn, book.title, book.author, book.coverImageUrl, book.category));
+          });
+          vm.shelves = partitionService.chunk(collection, vm.booksInShelf);
         })
         .error(function (data) {
           // TODO Handle error
-          vm.library = [];
+          vm.content = [];
+          vm.shelves = [];
         });
     })();
 
-    function viewBook (isbn) {
+    function viewBook(isbn) {
       $location.path('/view-book/' + isbn);
     }
   };

@@ -8,10 +8,9 @@
   /**
    * @ngInject
    */
-  function booksService(shelfService, googleBooksService, $q) {
+  function booksService(shelfService, googleBooksService, $q, Book) {
 
     var service = {
-      Book: Book,
       findBook: findBook,
       saveBook: saveBook
     };
@@ -19,14 +18,6 @@
     return service;
 
     //////////////////////
-
-    function Book (isbn, title, author, coverImageUrl, category) {
-      this.isbn = isbn;
-      this.title = title;
-      this.author = author;
-      this.coverImageUrl = coverImageUrl;
-      this.category = category;
-    };
 
     function saveBook (book) {
       googleBooksService.getCoverUrl(book.isbn)

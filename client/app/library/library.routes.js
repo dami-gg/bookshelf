@@ -7,6 +7,6 @@ angular.module('bookshelfApp')
         url: '/library',
         templateUrl: 'app/library/library.html',
         controller: 'LibraryController',
-        controllerAs: 'libCtl'
+        controllerAs: 'library'
       })
   });
