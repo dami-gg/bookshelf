@@ -5,6 +5,16 @@
 
       <h1>Add a new book</h1>
 
+      <div id="search">
+        <div>
+          <label for="title">Title</label>
+          <input id="title" ng-model="editBook.searchedTitle">
+          <label for="author">Author</label>
+          <input id="author" ng-model="editBook.searchedAuthor">
+          <button ng-click="editBook.showFindBookPopup()">Find book</button>
+        </div>
+      </div>
+
       <book-form></book-form>
     </div>
 
