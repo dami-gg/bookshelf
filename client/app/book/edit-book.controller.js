@@ -45,7 +45,7 @@
 
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: 'app/book/find-book.modal.view.html',
+        templateUrl: 'app/book/find-book.modal.html',
         controller: 'ModalController',
         controllerAs: 'modalCtrl',
         size: vm.searchResults.length,
