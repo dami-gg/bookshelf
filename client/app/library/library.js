@@ -6,7 +6,7 @@ angular.module('bookshelfApp')
       .state('library', {
         url: '/library',
         templateUrl: 'app/library/library.html',
-        controller: 'LibraryCtrl',
+        controller: 'LibraryController',
         controllerAs: 'libCtl'
       })
   });

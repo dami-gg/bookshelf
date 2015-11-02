@@ -6,6 +6,6 @@ angular.module('bookshelfApp')
       .state('/', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainController'
       });
   });

@@ -1,12 +1,19 @@
-'use strict';
+(function () {
 
-angular.module('bookshelfApp')
-  .service('partitionService', function(){
+  'use strict';
+
+  angular.module('bookshelfApp')
+    .service('partitionService', partitionService);
+
+  /**
+   * @ngInject
+   */
+  function partitionService() {
 
     /*
      Divides the array of data in several arrays of chunkSize elements
      */
-    this.chunk = function(data, chunkSize) {
+    this.chunk = function (data, chunkSize) {
       var totalItems = data.length,
         result = [];
 
@@ -16,4 +23,5 @@ angular.module('bookshelfApp')
 
       return result;
     }
-  });
+  };
+})();

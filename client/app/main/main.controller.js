@@ -1,6 +1,15 @@
-'use strict';
+(function () {
 
-angular.module('bookshelfApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.message = 'Hello';
-  });
+    'use strict';
+
+    angular.module('bookshelfApp')
+      .controller('MainController', MainController);
+
+    /**
+     * @ngInject
+     */
+    function MainController($scope) {
+      $scope.message = 'Hello';
+    }
+  })
+();

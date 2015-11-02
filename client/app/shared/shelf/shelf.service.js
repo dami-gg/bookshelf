@@ -1,9 +1,26 @@
-'use strict';
+(function () {
 
-angular.module('bookshelfApp')
-  .service('shelfService', ['$http', function($http){
+  'use strict';
 
-    this.addBook = function(book) {
+  angular.module('bookshelfApp')
+    .service('shelfService', shelfService);
+
+  /**
+   * @ngInject
+   */
+  function shelfService($http) {
+
+    var service = {
+      addBook: addBook,
+      getBook: getBook,
+      getCollection: getCollection
+    };
+
+    return service;
+
+    //////////////////////
+
+    function addBook(book) {
       $http.post('/api/books', {
         isbn: book.isbn,
         title: book.title,
@@ -14,11 +31,12 @@ angular.module('bookshelfApp')
       });
     };
 
-    this.getCollection = function() {
+    function getCollection() {
       return $http.get('/api/books');
     };
 
-    this.getBook = function(isbn) {
+    function getBook(isbn) {
       return $http.get('/api/books/' + isbn);
     }
-  }]);
+  };
+})();

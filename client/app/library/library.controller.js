@@ -1,26 +1,33 @@
-'use strict';
+(function () {
 
-angular.module('bookshelfApp')
-  .controller('LibraryCtrl', ['$location', 'shelfService', 'partitionService',
-    function ($location, shelfService, partitionService) {
+  'use strict';
 
-      var vm = this;
+  angular.module('bookshelfApp')
+    .controller('LibraryController', LibraryController);
 
-      vm.library = [];
-      vm.booksInShelf = 4;
+  /**
+   * @ngInject
+   */
+  function LibraryController($location, shelfService, partitionService) {
+    var vm = this;
 
-      (function getCollection() {
-        shelfService.getCollection()
-          .success(function (collection) {
-            vm.library = partitionService.chunk(collection, vm.booksInShelf);
-          })
-          .error(function (data) {
-            // TODO Handle error
-            vm.library = [];
-          });
-      })();
+    vm.booksInShelf = 4;
+    vm.library = [];
+    vm.viewBook = viewBook;
 
-      vm.viewBook = function (isbn) {
-        $location.path('/view-book/' + isbn);
-      }
-    }]);
+    (function getCollection() {
+      shelfService.getCollection()
+        .success(function (collection) {
+          vm.library = partitionService.chunk(collection, vm.booksInShelf);
+        })
+        .error(function (data) {
+          // TODO Handle error
+          vm.library = [];
+        });
+    })();
+
+    function viewBook (isbn) {
+      $location.path('/view-book/' + isbn);
+    }
+  };
+})();

@@ -1,15 +1,27 @@
-'use strict';
+(function () {
 
-angular.module('bookshelfApp')
-  .controller('EditBookCtrl', ['booksService', '$uibModal', function (booksService, $uibModal) {
+  'use strict';
+
+  angular.module('bookshelfApp')
+    .controller('EditBookController', EditBookController);
+
+  //EditBookController.$inject['booksService', '$uibModal'];
+
+  /**
+   * @ngInject
+   */
+  function EditBookController(booksService, $uibModal) {
     var vm = this;
 
-    vm.save = function () {
+    vm.save = save;
+
+    vm.showFindBookPopup = showFindBookPopup;
+
+    function save () {
       booksService.saveBook(vm.book);
     };
 
-    vm.showFindBookPopup = function () {
-
+    function showFindBookPopup () {
       if (vm.searchedTitle === undefined || vm.searchedAuthor === undefined) {
         // TODO Show error popup
         return;
@@ -29,12 +41,12 @@ angular.module('bookshelfApp')
         });
     };
 
-    var loadPopup = function () {
+    function loadPopup () {
 
       var modalInstance = $uibModal.open({
         animation: true,
-        templateUrl: 'app/book/find.book.popup.html',
-        controller: 'ModalCtrl',
+        templateUrl: 'app/book/find-book.modal.view.html',
+        controller: 'ModalController',
         controllerAs: 'modalCtrl',
         size: vm.searchResults.length,
         resolve: {
@@ -51,5 +63,5 @@ angular.module('bookshelfApp')
         //$log.info('Modal dismissed at: ' + new Date());
       });
     }
-  }]);
-
+  };
+})();
