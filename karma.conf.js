@@ -17,28 +17,25 @@ module.exports = function(config) {
       'client/bower_components/angular-resource/angular-resource.js',
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
-      'client/bower_components/angular-route/angular-route.js',
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'client/bower_components/lodash/dist/lodash.compat.js',
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'client/bower_components/angular-animate/angular-animate.js',
+      'client/bower_components/angular-ui-grid/ui-grid.js',
       'client/app/app.js',
-      'client/app/app.coffee',
       'client/app/**/*.js',
-      'client/app/**/*.coffee',
       'client/components/**/*.js',
-      'client/components/**/*.coffee',
-      'client/app/**/*.jade',
-      'client/components/**/*.jade',
       'client/app/**/*.html',
       'client/components/**/*.html'
     ],
 
     preprocessors: {
-      '**/*.jade': 'ng-jade2js',
-      '**/*.html': 'html2js',
-      '**/*.coffee': 'coffee',
+      //'**/*.jade': 'ng-jade2js',
+      //'**/*.html': 'html2js',
+      //'**/*.coffee': 'coffee',
     },
 
+    /*
     ngHtml2JsPreprocessor: {
       stripPrefix: 'client/'
     },
@@ -46,6 +43,8 @@ module.exports = function(config) {
     ngJade2JsPreprocessor: {
       stripPrefix: 'client/'
     },
+
+    */
 
     // list of files / patterns to exclude
     exclude: [],
@@ -70,11 +69,14 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['ChromeCanary', 'PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true,
+
+    // Run as: karma start --reporters html
+    //reporters: ['html']
   });
 };

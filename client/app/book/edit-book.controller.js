@@ -19,7 +19,7 @@
 
     function save () {
       booksService.saveBook(vm.book);
-    };
+    }
 
     function showFindBookPopup () {
       if (vm.searchedTitle === undefined || vm.searchedAuthor === undefined) {
@@ -27,8 +27,8 @@
         return;
       }
 
-      var searchableTitle = vm.searchedTitle.toLowerCase().replace(/ /g, "+"),
-        searchableAuthor = vm.searchedAuthor.toLowerCase().replace(/ /g, "+");
+      var searchableTitle = vm.searchedTitle.toLowerCase().replace(/ /g, '+'),
+        searchableAuthor = vm.searchedAuthor.toLowerCase().replace(/ /g, '+');
 
       vm.searchResults = [];
 
@@ -39,7 +39,7 @@
         }, function (error) {
           // TODO Show popup with error message
         });
-    };
+    }
 
     function loadPopup () {
 
@@ -63,5 +63,5 @@
         //$log.info('Modal dismissed at: ' + new Date());
       });
     }
-  };
+  }
 })();

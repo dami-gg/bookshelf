@@ -28,7 +28,7 @@
           }
         }, function (error) {
           // TODO Handle error
-          book.coverImageUrl = "";
+          book.coverImageUrl = '';
         }
       ).finally(function () {
           return shelfService.addBook(book);
@@ -40,7 +40,7 @@
           console.log(error);
         }
       );
-    };
+    }
 
     function findBook (title, author) {
       var deferred = $q.defer(),
@@ -51,32 +51,32 @@
           var info = response.data,
             results = [],
             result,
-            isbn = "";
+            isbn = '';
           if (info !== undefined && info.totalItems > 0) {
             info.items.forEach(function (item) {
               item.volumeInfo.industryIdentifiers.forEach(function (item) {
-                if (item.type === "ISBN_10") {
+                if (item.type === 'ISBN_10') {
                   isbn = item.identifier;
                 }
               });
               result = new Book(
                 isbn,
                 item.volumeInfo.title,
-                item.volumeInfo.authors !== undefined ? item.volumeInfo.authors[0] : "",
-                item.volumeInfo.imageLinks !== undefined ? item.volumeInfo.imageLinks.smallThumbnail : "",
-                item.volumeInfo.categories !== undefined ? item.volumeInfo.categories[0] : "");
+                item.volumeInfo.authors !== undefined ? item.volumeInfo.authors[0] : '',
+                item.volumeInfo.imageLinks !== undefined ? item.volumeInfo.imageLinks.smallThumbnail : '',
+                item.volumeInfo.categories !== undefined ? item.volumeInfo.categories[0] : '');
               results.push(result);
             });
             deferred.resolve(results);
           }
           else {
-            deferred.reject("No books have been found");
+            deferred.reject('No books have been found');
           }
         }, function (error) {
           deferred.reject(error);
         });
 
       return promise;
-    };
-  };
+    }
+  }
 })();

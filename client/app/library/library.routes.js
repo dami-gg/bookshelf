@@ -8,5 +8,5 @@ angular.module('bookshelfApp')
         templateUrl: 'app/library/library.html',
         controller: 'LibraryController',
         controllerAs: 'library'
-      })
+      });
   });

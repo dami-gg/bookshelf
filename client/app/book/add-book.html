@@ -8,9 +8,9 @@
       <div id="search">
         <div>
           <label for="title">Title</label>
-          <input id="title" ng-model="editBook.searchedTitle">
+          <input id="title" ng-model="editBook.searchedTitle" ng-model-options="{ debounce: 100 }">
           <label for="author">Author</label>
-          <input id="author" ng-model="editBook.searchedAuthor">
+          <input id="author" ng-model="editBook.searchedAuthor" ng-model-options="{ debounce: 100 }">
           <button ng-click="editBook.showFindBookPopup()">Find book</button>
         </div>
       </div>

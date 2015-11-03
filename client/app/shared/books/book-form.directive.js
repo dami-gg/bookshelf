@@ -9,8 +9,8 @@
     return {
       restrict: 'E',
       templateUrl: '/app/shared/books/book-form.html'
-    }
-  };
+    };
+  }
 })();
 
 

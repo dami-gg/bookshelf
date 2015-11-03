@@ -21,10 +21,10 @@
 
     function getCoverUrl(isbn) {
       return $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn);
-    };
+    }
 
     function findBook(title, author) {
       return $http.get('https://www.googleapis.com/books/v1/volumes?q=intitle:' + title + '&inauthor:' + author);
-    };
-  };
+    }
+  }
 })();

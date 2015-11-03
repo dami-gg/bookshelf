@@ -29,14 +29,14 @@
         category: book.category,
         read: true
       });
-    };
+    }
 
     function getCollection() {
       return $http.get('/api/books');
-    };
+    }
 
     function getBook(isbn) {
       return $http.get('/api/books/' + isbn);
     }
-  };
+  }
 })();

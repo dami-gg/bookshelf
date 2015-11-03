@@ -23,5 +23,5 @@
       vm.cancel = function () {
         $uibModalInstance.dismiss('cancel');
       };
-    };
+    }
 })();

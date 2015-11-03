@@ -24,7 +24,7 @@
           });
           vm.shelves = partitionService.chunk(collection, vm.booksInShelf);
         })
-        .error(function (data) {
+        .error(function (error) {
           // TODO Handle error
           vm.content = [];
           vm.shelves = [];
@@ -34,5 +34,5 @@
     function viewBook(isbn) {
       $location.path('/view-book/' + isbn);
     }
-  };
+  }
 })();

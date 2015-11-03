@@ -16,7 +16,7 @@
       this.author = author;
       this.coverImageUrl = coverImageUrl;
       this.category = category;
-    };
+    }
 
     return Book;
   }

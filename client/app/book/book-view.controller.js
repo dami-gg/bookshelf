@@ -15,6 +15,6 @@
         vm.book = response.data;
       }, function (error) {
         // TODO Handle error
-      })
-  };
+      });
+  }
 })();
