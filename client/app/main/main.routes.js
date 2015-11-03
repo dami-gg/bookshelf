@@ -3,7 +3,7 @@
 angular.module('bookshelfApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('/', {
+      .state('/home', {
         url: '/',
         templateUrl: 'app/main/main.html',
         controller: 'MainController'

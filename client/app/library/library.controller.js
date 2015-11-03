@@ -26,13 +26,14 @@
         })
         .error(function (error) {
           // TODO Handle error
+          console.log(error);
           vm.content = [];
           vm.shelves = [];
         });
     })();
 
     function viewBook(isbn) {
-      $location.path('/view-book/' + isbn);
+      $location.path('/book-detail/' + isbn);
     }
   }
 })();

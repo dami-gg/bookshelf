@@ -8,14 +8,14 @@
       <div id="search">
         <div>
           <label for="title">Title</label>
-          <input id="title" ng-model="editBook.searchedTitle" ng-model-options="{ debounce: 100 }">
+          <input id="title" ng-model="addBook.searchedTitle" ng-model-options="{ debounce: 100 }">
           <label for="author">Author</label>
-          <input id="author" ng-model="editBook.searchedAuthor" ng-model-options="{ debounce: 100 }">
-          <button ng-click="editBook.showFindBookPopup()">Find book</button>
+          <input id="author" ng-model="addBook.searchedAuthor" ng-model-options="{ debounce: 100 }">
+          <button ng-click="addBook.showFindBookPopup()">Find book</button>
         </div>
       </div>
 
-      <book-form></book-form>
+      <book-form book="addBook.book" save-method="addBook.save(book)"></book-form>
     </div>
 
   </div>

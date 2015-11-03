@@ -28,6 +28,7 @@
           }
         }, function (error) {
           // TODO Handle error
+          console.log(error);
           book.coverImageUrl = '';
         }
       ).finally(function () {

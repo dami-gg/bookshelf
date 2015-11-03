@@ -13,7 +13,8 @@
     var service = {
       addBook: addBook,
       getBook: getBook,
-      getCollection: getCollection
+      getCollection: getCollection,
+      modifyBook: modifyBook
     };
 
     return service;
@@ -28,6 +29,27 @@
         coverImageUrl: book.coverImageUrl,
         category: book.category,
         read: true
+      }, function(data) {
+
+      }, function(error) {
+        // TODO Handle error
+        console.log(error);
+      });
+    }
+
+    function modifyBook(book) {
+      $http.put('/api/books/' + book.isbn, {
+        isbn: book.isbn,
+        title: book.title,
+        author: book.author,
+        coverImageUrl: book.coverImageUrl,
+        category: book.category,
+        read: true
+      }, function(data) {
+
+      }, function(error) {
+        // TODO Handle error
+        console.log(error);
       });
     }
 

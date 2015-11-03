@@ -1,20 +1,40 @@
 <div>
 
-  <h1>{{viewBook.book.title}}</h1>
+  <div class="col-md-2"></div>
 
-  <div class="col-md-6">
+  <div class="col-md-4">
+    <h1>{{bookDetail.book.title}}</h1>
 
-    <img class="cover" ng-src="{{viewBook.book.coverImageUrl}}"/>
-
+    <img class="cover" ng-src="{{bookDetail.book.coverImageUrl}}"/>
   </div>
 
-  <div class="col-md-6 well">
+  <div class="col-md-4">
 
-    <div>
-      <span>Author</span>
-      <span>{{viewBook.book.author}}</span>
+    <div class="well">
+      <span>Author:</span>
+      <span>{{bookDetail.book.author}}</span>
     </div>
 
+    <div class="well">
+      <span>Category:</span>
+      <span>{{bookDetail.book.category}}</span>
+    </div>
+
+    <div class="well">
+      <span>ISBN:</span>
+      <span>{{bookDetail.book.isbn}}</span>
+    </div>
+
+    <div class="well">
+      <span>Rate:</span>
+      <span>***</span>
+    </div>
+
+    <button type="button" class="btn btn-primary"
+            ng-click="bookDetail.editBook(bookDetail.book.isbn)">Edit</button>
+
   </div>
+
+  <div class="col-md-2"></div>
 
 </div>

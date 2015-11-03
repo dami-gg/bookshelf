@@ -38,6 +38,18 @@ exports.create = function(req, res) {
 // Updates an existing book in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
+  Book.findOne(req.params.isbn, function (err, book) {
+    if (err) { return handleError(res, err); }
+    if(!book) { return res.send(404); }
+    var updated = _.merge(book, req.body);
+    updated.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.json(200, book);
+    });
+  });
+
+  /*
+  if(req.body._id) { delete req.body._id; }
   Book.findById(req.params.id, function (err, book) {
     if (err) { return handleError(res, err); }
     if(!book) { return res.send(404); }
@@ -47,6 +59,7 @@ exports.update = function(req, res) {
       return res.json(200, book);
     });
   });
+  */
 };
 
 // Deletes a book from the DB.

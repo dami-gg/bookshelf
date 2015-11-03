@@ -6,19 +6,19 @@ angular.module('bookshelfApp')
       .state('add-book', {
         url: '/add-book',
         templateUrl: 'app/book/add-book.html',
+        controller: 'AddBookController',
+        controllerAs: 'addBook'
+      })
+      .state('edit-book', {
+        url: '/edit-book/:isbn',
+        templateUrl: 'app/book/edit-book.html',
         controller: 'EditBookController',
         controllerAs: 'editBook'
       })
-      .state('modify-book', {
-        url: '/modify-book',
-        templateUrl: 'app/book/modify-book.html',
-        controller: 'EditBookController',
-        controllerAs: 'editBook'
-      })
-      .state('view-book', {
-        url: '/view-book/:isbn',
+      .state('book-detail', {
+        url: '/book-detail/:isbn',
         templateUrl: 'app/book/book-detail.html',
-        controller: 'ViewBookController',
-        controllerAs: 'viewBook'
+        controller: 'BookDetailController',
+        controllerAs: 'bookDetail'
       });
   });

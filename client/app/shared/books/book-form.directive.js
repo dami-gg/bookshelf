@@ -8,7 +8,10 @@
   function bookFormDirective() {
     return {
       restrict: 'E',
-      templateUrl: '/app/shared/books/book-form.html'
+      templateUrl: '/app/shared/books/book-form.html',
+      scope: {
+        book: '=',
+        save: '&saveMethod' }
     };
   }
 })();

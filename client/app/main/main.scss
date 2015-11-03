@@ -1,0 +1,31 @@
+.jumbotron {
+
+  float: left;
+  width: 100%;
+
+  .main-menu {
+
+    float: left;
+    width: 100%;
+
+    .option {
+
+      float: left;
+      display: block;
+      height: 200px;
+      width: 40%;
+      margin: 10px 5%;
+      border: 1px solid black;
+      border-radius: 10px;
+      text-align: center;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      span {
+        font-size: 24px; top:50%; margin-top:-12px;
+      }
+    }
+  }
+}

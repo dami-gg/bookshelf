@@ -6,28 +6,28 @@
     <div class="form-group">
       <label for="inputIsbn" class="col-md-2 control-label">ISBN</label>
       <div class="col-md-10">
-        <input type="name" class="form-control" id="inputIsbn" placeholder="ISBN" ng-model="editBook.book.isbn">
+        <input type="name" class="form-control" id="inputIsbn" placeholder="ISBN" ng-model="book.isbn">
       </div>
     </div>
 
     <div class="form-group">
       <label for="inputTitle" class="col-md-2 control-label">Title</label>
       <div class="col-md-10">
-        <input type="title" class="form-control" id="inputTitle" placeholder="Title" ng-model="editBook.book.title">
+        <input type="title" class="form-control" id="inputTitle" placeholder="Title" ng-model="book.title">
       </div>
     </div>
 
     <div class="form-group">
       <label for="inputAuthor" class="col-md-2 control-label">Author</label>
       <div class="col-md-10">
-        <input type="author" class="form-control" id="inputAuthor" placeholder="Author" ng-model="editBook.book.author">
+        <input type="author" class="form-control" id="inputAuthor" placeholder="Author" ng-model="book.author">
       </div>
     </div>
 
     <div class="form-group">
       <label for="category" class="col-md-2 control-label">Category</label>
       <div class="col-md-10">
-        <select class="form-control" id="category" ng-model="editBook.book.category">
+        <select class="form-control" id="category" ng-model="book.category">
           <option>Science fiction</option>
           <option>Mystery</option>
           <option>Action</option>
@@ -39,8 +39,8 @@
 
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
-        <button class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary" ng-click="editBook.save(book);">Save</button>
+        <button class="btn btn-default" ui-sref="/home">Cancel</button>
+        <button type="submit" class="btn btn-primary" ng-click="save()">Save</button>
       </div>
     </div>
   </fieldset>
