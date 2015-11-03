@@ -64,6 +64,15 @@ exports.update = function(req, res) {
 
 // Deletes a book from the DB.
 exports.destroy = function(req, res) {
+  Book.findOne(req.params.isbn, function (err, book) {
+    if(err) { return handleError(res, err); }
+    if(!book) { return res.send(404); }
+    book.remove(function(err) {
+      if(err) { return handleError(res, err); }
+      return res.send(204);
+    });
+  });
+  /*
   Book.findById(req.params.id, function (err, book) {
     if(err) { return handleError(res, err); }
     if(!book) { return res.send(404); }
@@ -72,6 +81,7 @@ exports.destroy = function(req, res) {
       return res.send(204);
     });
   });
+  */
 };
 
 function handleError(res, err) {

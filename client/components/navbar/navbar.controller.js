@@ -5,6 +5,12 @@ angular.module('bookshelfApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    },{
+      'title': 'Add book',
+      'link': '/add-book'
+    },{
+      'title': 'Library',
+      'link': '/library'
     }];
 
     $scope.isCollapsed = true;

@@ -10,6 +10,7 @@
   function BookDetailController($stateParams, $location, shelfService) {
     var vm = this;
 
+    vm.deleteBook = deleteBook;
     vm.editBook = editBook;
 
     shelfService.getBook($stateParams.isbn)
@@ -19,6 +20,11 @@
         // TODO Handle error
         console.log(error);
       });
+
+    function deleteBook(isbn) {
+      shelfService.deleteBook(isbn);
+      $location.path('/library');
+    }
 
     function editBook(isbn) {
       $location.path('/edit-book/' + isbn);

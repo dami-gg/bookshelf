@@ -7,15 +7,16 @@
 
     float: left;
     width: 100%;
+    margin-top: 20px;
 
     .option {
 
       float: left;
       display: block;
-      height: 200px;
+      height: 45px;
       width: 40%;
       margin: 10px 5%;
-      border: 1px solid black;
+      border: 1px solid;
       border-radius: 10px;
       text-align: center;
 
@@ -24,7 +25,19 @@
       }
 
       span {
-        font-size: 24px; top:50%; margin-top:-12px;
+        font-size: 28px;
+      }
+
+      &.blue {
+        background-color: #428bca;
+        border-color: #428bca;
+        color: white;
+      }
+
+      &.green {
+        background-color: #00b200;
+        border-color: #00b200;
+        color: white;
       }
     }
   }

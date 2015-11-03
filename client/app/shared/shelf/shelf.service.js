@@ -12,6 +12,7 @@
 
     var service = {
       addBook: addBook,
+      deleteBook: deleteBook,
       getBook: getBook,
       getCollection: getCollection,
       modifyBook: modifyBook
@@ -30,6 +31,16 @@
         category: book.category,
         read: true
       }, function(data) {
+
+      }, function(error) {
+        // TODO Handle error
+        console.log(error);
+      });
+    }
+
+    function deleteBook(isbn) {
+      $http.delete('/api/books/' + isbn,
+        function(data) {
 
       }, function(error) {
         // TODO Handle error
