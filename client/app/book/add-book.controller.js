@@ -39,6 +39,7 @@
           loadPopup();
         }, function (error) {
           // TODO Show popup with error message
+          console.log(error);
         });
     }
 
@@ -59,7 +60,7 @@
 
       modalInstance.result.then(function (selectedItem) {
         vm.book = selectedItem;
-      }, function () {
+      }, function (error) {
         // TODO Handle error
         console.log(error);
       });

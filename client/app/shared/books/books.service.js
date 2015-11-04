@@ -34,7 +34,7 @@
       ).finally(function () {
           return shelfService.addBook(book);
         })
-        .then(function (response) {
+        .then(function () {
 
         }, function (error) {
           // TODO Handle error

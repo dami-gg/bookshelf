@@ -30,7 +30,7 @@
         coverImageUrl: book.coverImageUrl,
         category: book.category,
         read: true
-      }, function(data) {
+      }, function() {
 
       }, function(error) {
         // TODO Handle error
@@ -40,7 +40,7 @@
 
     function deleteBook(isbn) {
       $http.delete('/api/books/' + isbn,
-        function(data) {
+        function() {
 
       }, function(error) {
         // TODO Handle error
@@ -56,7 +56,7 @@
         coverImageUrl: book.coverImageUrl,
         category: book.category,
         read: true
-      }, function(data) {
+      }, function() {
 
       }, function(error) {
         // TODO Handle error
